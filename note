@@ -1,0 +1,54 @@
+//from student query and connection to database
+
+include dbconnect.php;
+
+
+if(isset($_POST['submit']))
+{
+    $sql = "INSERT INTO users (username, password, email)
+    VALUES ('".$_POST["username"]."','".$_POST["password"]."','".$_POST["email"]."')";
+
+    $result = mysqli_query($connect,$sql);
+}
+
+$query = mysqli_query($connect, "SELECT * FROM volunteer_info");
+
+while($row = mysqli_fetch_assoc($result))
+{
+    print_r($row);
+}
+    
+    
+    <!--
+  footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+-->
+<form the footer>
+.newsletter-box input#appendedInputButton {
+	background: #FFFFFF;
+	display: inline-block;
+	float: left;
+	height: 30px;
+	clear: both;
+	width: 100%;
+
+}
+
+.newsletter-box .btn {
+	border: medium none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	height: 40px;
+	padding: 0;
+	width: 100%;
+	color: #fff;
+}
